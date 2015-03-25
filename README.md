@@ -9,9 +9,7 @@ to create an amazing Android application.
 At this point in time... here and only here. Hopefully one day the Google Play store.
 
 ## How to contribute?
-If you would like to contribute code you can do so through GitHub by forking the repository and sending a pull request.  
-When submitting code, please make every effort to follow existing conventions and style in order to keep the code as readable as possible.  
-See the wiki for more information on the project and how you can help constribute [here](https://github.com/ccpgames/unicorn/wiki/Contributing).
+If you would like to contribute code you can do so through GitHub by forking the repository and sending a pull request. When submitting code, please make every effort to follow existing conventions and style in order to keep the code as readable as possible. See the wiki for more information on [Contributing](https://github.com/ccpgames/unicorn/wiki/Contributing) to the project.
 
 ## How to build it?
 Details on building can be found on the [Getting Started](https://github.com/ccpgames/unicorn/wiki/Getting-Started) page of the wiki.
