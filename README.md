@@ -2,7 +2,7 @@ Welcome to Project Unicorn
 --------------------------
 
 ## What is Project Unicorn?
-Unicorn is an open source projected aimed at working with the EVE Online community
+First and formost at this time Unicorn is an experiment. It may work and be great, or it may not work out and be cut at some point. For now though Unicorn is an open source projected aimed at working with the EVE Online community
 to create an amazing Android application.
 
 ## Where can I find it?
