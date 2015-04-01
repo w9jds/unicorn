@@ -21,4 +21,4 @@ channel of the Tweetfleet Slack. You can sign up for the Tweetfleet
 Slack [here](http://aideronrobotics.com/tweetfleet).
 
 ## What is the code license?
-Um... FIGURE THIS OUT! O_o
+[License info](https://github.com/ccpgames/unicorn/blob/develop/LICENSE)
