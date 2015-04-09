@@ -8,19 +8,26 @@ import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import retrofit.http.GET;
+import retrofit.http.Path;
 
 /**
  * Created by Jeremy Shore on 1/25/2015.
  */
-public class ApiServices {
+public class Crest {
 
-    private static ICrestService buildCrestAdapter() {
+    interface Endpoint {
+        @GET("/{path}")
+        void getCrest(@Path("path") String path, Callback<?> callback);
+    }
+
+    private static Endpoint buildCrestAdapter() {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setConverter(new StringConverter())
                 .setEndpoint("http://public-crest.eveonline.com")
                 .build();
 
-        return restAdapter.create(ICrestService.class);
+        return restAdapter.create(Endpoint.class);
     }
 
     public static void getServerStatus(final Callback<ServerStatus> callback) {
