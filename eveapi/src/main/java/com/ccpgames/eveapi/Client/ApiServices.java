@@ -28,10 +28,7 @@ public class ApiServices {
                 .getCrest("", new Callback<String>() {
                     @Override
                     public void success(String json, Response response) {
-                        Gson gson = new Gson();
-                        ServerStatus serverStatus = gson.fromJson(json, ServerStatus.class);
-
-                        callback.success(serverStatus, response);
+                        callback.success(new Gson().fromJson(json, ServerStatus.class), response);
                     }
 
                     @Override
