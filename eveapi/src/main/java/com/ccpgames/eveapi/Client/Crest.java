@@ -16,33 +16,28 @@ import retrofit.http.Path;
  */
 public class Crest {
 
+    private Endpoint crestEndpoint;
+
+    void setCrestEndpoint(Endpoint crestEndpoint) {
+        this.crestEndpoint = crestEndpoint;
+    }
+
     interface Endpoint {
         @GET("/{path}")
         void getCrest(@Path("path") String path, Callback<?> callback);
     }
 
-    private static Endpoint buildCrestAdapter() {
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setConverter(new StringConverter())
-                .setEndpoint("http://public-crest.eveonline.com")
-                .build();
+    public void getServerStatus(final Callback<ServerStatus> callback) {
+        crestEndpoint.getCrest("", new Callback<String>() {
+            @Override
+            public void success(String json, Response response) {
+                callback.success(new Gson().fromJson(json, ServerStatus.class), response);
+            }
 
-        return restAdapter.create(Endpoint.class);
+            @Override
+            public void failure(RetrofitError error) {
+                callback.failure(error);
+            }
+        });
     }
-
-    public static void getServerStatus(final Callback<ServerStatus> callback) {
-        buildCrestAdapter()
-                .getCrest("", new Callback<String>() {
-                    @Override
-                    public void success(String json, Response response) {
-                        callback.success(new Gson().fromJson(json, ServerStatus.class), response);
-                    }
-
-                    @Override
-                    public void failure(RetrofitError error) {
-                        callback.failure(error);
-                    }
-                });
-    }
-
 }

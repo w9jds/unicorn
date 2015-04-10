@@ -7,6 +7,9 @@ import com.google.gson.annotations.SerializedName;
  */
 public class ServerStatus {
 
+    @SerializedName("serverName")
+    private String serverName;
+
     @SerializedName("serverVersion")
     private String serverVersion;
 
@@ -38,6 +41,10 @@ public class ServerStatus {
 
     public String getServerVersion() {
         return serverVersion;
+    }
+
+    public String getServerName() {
+        return serverName;
     }
 
     private class ServiceStatus {
