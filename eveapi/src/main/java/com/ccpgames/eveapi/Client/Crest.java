@@ -1,30 +1,38 @@
 package com.ccpgames.eveapi.Client;
 
-
 import com.ccpgames.eveapi.ServerStatus;
 import com.google.gson.Gson;
 
+import java.util.HashMap;
+
 import retrofit.Callback;
-import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import retrofit.http.GET;
 import retrofit.http.Path;
+import retrofit.http.QueryMap;
 
 /**
  * Created by Jeremy Shore on 1/25/2015.
  */
 public class Crest {
 
-    private Endpoint crestEndpoint;
+    Endpoint crestEndpoint;
 
-    void setCrestEndpoint(Endpoint crestEndpoint) {
-        this.crestEndpoint = crestEndpoint;
+    public Crest() {
+        this.crestEndpoint = new CrestBuilder()
+                .setSingularityEndpoint()
+                .build()
+                .crestEndpoint;
     }
 
     interface Endpoint {
         @GET("/{path}")
         void getCrest(@Path("path") String path, Callback<?> callback);
+
+        @GET("/{path}")
+        void getCrest(@Path("path") String path, @QueryMap HashMap<String, String> params,
+                      Callback<?> callback);
     }
 
     public void getServerStatus(final Callback<ServerStatus> callback) {

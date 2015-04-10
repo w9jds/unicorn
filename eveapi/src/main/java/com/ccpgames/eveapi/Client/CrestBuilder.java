@@ -27,7 +27,7 @@ public class CrestBuilder {
                 .setEndpoint(basePath)
                 .build();
 
-        crest.setCrestEndpoint(restAdapter.create(Crest.Endpoint.class));
+        crest.crestEndpoint = restAdapter.create(Crest.Endpoint.class);
         return crest;
     }
 }
