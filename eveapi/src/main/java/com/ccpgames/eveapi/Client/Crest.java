@@ -18,7 +18,9 @@ import retrofit.http.QueryMap;
  */
 public class Crest {
 
-    public static final String SINGULARITY = "http://public-crest-sisi.testeveonline.com/";
+    public static final String PUBLIC_SINGULARITY = "http://public-crest-sisi.testeveonline.com/";
+    public static final String SINGULARITY = "https://api-sisi.testeveonline.com/";
+    public static final String PUBLIC_TRANQUILITY = "http://public-crest.eveonline.com/";
     public static final String TRANQUILITY = "https://crest-tq.eveonline.com/";
 
     Endpoint crestEndpoint = new CrestBuilder()
@@ -73,12 +75,11 @@ public class Crest {
         }
 
         public Endpoint buildEndpoint() {
-            RestAdapter restAdapter = new RestAdapter.Builder()
+            return new RestAdapter.Builder()
                     .setConverter(new StringConverter())
                     .setEndpoint(basePath)
-                    .build();
-
-            return restAdapter.create(Endpoint.class);
+                    .build()
+                    .create(Endpoint.class);
         }
     }
 }
