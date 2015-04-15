@@ -1,5 +1,8 @@
 # Based on the GitHub Android.gitignore file at https://github.com/github/gitignore/blob/master/Android.gitignore
 
+# Mac OS Filesystem Junk
+.DS_Store
+
 # Built application files
 *.apk
 *.ap_
