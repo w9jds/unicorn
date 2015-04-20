@@ -4,6 +4,8 @@
 *.apk
 *.ap_
 
+.DS_Store
+
 # Files for the Dalvik VM
 *.dex
 
