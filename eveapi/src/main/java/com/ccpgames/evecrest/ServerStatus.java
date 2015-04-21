@@ -1,4 +1,4 @@
-package com.ccpgames.eveapi;
+package com.ccpgames.evecrest;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,6 +1,6 @@
-package com.ccpgames.eveapi.Client;
+package com.ccpgames.evecrest.Client;
 
-import com.ccpgames.eveapi.ServerStatus;
+import com.ccpgames.evecrest.ServerStatus;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
@@ -23,7 +23,7 @@ public class Crest {
     public static final String PUBLIC_TRANQUILITY = "http://public-crest.eveonline.com/";
     public static final String TRANQUILITY = "https://crest-tq.eveonline.com/";
 
-    Endpoint crestEndpoint = new CrestBuilder()
+    Endpoint crestEndpoint = new Builder()
             .setTranquilityEndpoint()
             .buildEndpoint();
 
@@ -54,16 +54,16 @@ public class Crest {
         });
     }
 
-    public static class CrestBuilder {
+    public static class Builder {
 
         private String basePath;
 
-        public CrestBuilder setSingularityEndpoint() {
+        public Builder setSingularityEndpoint() {
             this.basePath = SINGULARITY;
             return this;
         }
 
-        public CrestBuilder setTranquilityEndpoint() {
+        public Builder setTranquilityEndpoint() {
             this.basePath = TRANQUILITY;
             return this;
         }
