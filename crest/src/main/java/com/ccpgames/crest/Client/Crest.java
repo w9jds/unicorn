@@ -1,6 +1,6 @@
-package com.ccpgames.evecrest.Client;
+package com.ccpgames.crest.Client;
 
-import com.ccpgames.evecrest.ServerStatus;
+import com.ccpgames.crest.ServerStatus;
 import com.google.gson.Gson;
 
 import java.util.HashMap;

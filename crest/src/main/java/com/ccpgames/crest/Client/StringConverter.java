@@ -1,4 +1,4 @@
-package com.ccpgames.evecrest.Client;
+package com.ccpgames.crest.Client;
 
 import java.lang.reflect.Type;
 import java.util.Scanner;
